@@ -27,7 +27,7 @@ import (
 	"github.com/apptainer/sif/v2/pkg/integrity"
 	"github.com/apptainer/sif/v2/pkg/sif"
 	"github.com/hashicorp/go-multierror"
-	toml "github.com/pelletier/go-toml"
+	"github.com/pelletier/go-toml"
 )
 
 var (
@@ -242,7 +242,7 @@ func shouldRun(ecl *EclConfig, fp *os.File, kr openpgp.KeyRing) (ok bool, err er
 	}
 	defer f.UnloadContainer()
 
-	opts := []integrity.VerifierOpt{integrity.OptVerifyWithKeyRing(kr)}
+	opts := []integrity.VerifierOpt{integrity.OptVerifyWithSigner(kr)}
 	if ecl.Legacy {
 		// Legacy behavior is to verify the primary partition only.
 		od, err := f.GetDescriptor(sif.WithPartitionType(sif.PartPrimSys))
