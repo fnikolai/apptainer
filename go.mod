@@ -9,7 +9,7 @@ require (
 	github.com/apex/log v1.9.0
 	github.com/apptainer/container-key-client v0.8.0
 	github.com/apptainer/container-library-client v1.3.3
-	github.com/apptainer/sif/v2 v2.0.0-00010101000000-000000000000
+	github.com/apptainer/sif/v2 x509
 	github.com/blang/semver/v4 v4.0.0
 	github.com/buger/goterm v1.0.4
 	github.com/buger/jsonparser v1.1.1
@@ -154,5 +154,3 @@ require (
 // These commits are needed by containers/image/v5 and the replace is necessary given how image-spec v1.0.2 has been
 // tagged / rebased.
 replace github.com/opencontainers/image-spec => github.com/opencontainers/image-spec v1.0.2-0.20211117181255-693428a734f5
-
-replace github.com/apptainer/sif/v2 => github.com/fnikolai/sif/v2 v2.0.0-20221005101013-00d06dca77f1
