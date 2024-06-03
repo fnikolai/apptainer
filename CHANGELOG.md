@@ -38,6 +38,14 @@ For older changes see the [archived Singularity change log](https://github.com/a
   available.  This makes files inside sif files appear to be owned by the
   user instead of by the nobody id 65534 when running in non-setuid mode.
 
+- Added support for signing and validating images using X509 certificates. For
+  the signing the flags --pkcs8Key and --x509cert are added. In the respective
+  order, the flags load the private key and the certificate of the authority
+  signing the image (signer). For the validation, --x509cert, --x509RootCA,
+  and --x509IntermediateCerts. In the respective order, they load the signer's
+  certificate, the certificate of the Root CA who signed the signer's certificate,
+  and the certificates of intermediate CAs.
+
 ## v1.1.2 - \[2022-10-06\]
 
 ### Changes since last release
